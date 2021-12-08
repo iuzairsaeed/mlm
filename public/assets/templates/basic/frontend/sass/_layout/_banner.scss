@@ -1,0 +1,95 @@
+.banner-section {
+    padding: 270px 0 200px;
+    @include breakpoint(max-lg) {
+        padding: 220px 0 130px;
+    }
+    @include breakpoint(max-sm) {
+        padding: 180px 0 100px;
+    }
+}
+.banner-content {
+    max-width: 580px;
+    .title {
+        margin-bottom: 25px;
+        color: $white-color;
+    }
+    .subtitle {
+        color: $white-color;
+        margin-bottom: 40px;
+    }
+    p {
+        color: $light-color;
+        margin-bottom: 40px;
+    }
+    @include breakpoint(md) {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+}
+.banner-thumb {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% + 50px);
+    .sub-thumb {
+        position: absolute;
+        animation: updown 2s alternate infinite;
+        -webkit-animation: updown 2s alternate infinite;
+        -moz-animation: updown 2s alternate infinite;
+        z-index: 1;
+        opacity: 0;
+        @include transition($transition);
+        &:nth-child(1) {
+            left: 595px;
+            bottom: 333px;
+        }
+        &:nth-child(2) {
+            left: 484px;
+            bottom: 410px;
+            animation-delay: .5s;
+            -webkit-animation-delay: .5s;
+            -moz-animation-delay: .5s;
+        }
+        &:nth-child(3) {
+            left: 290px;
+            bottom: 450px;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -moz-animation-delay: 1s;
+        }
+        &:nth-child(4)  {
+            left: 120px;
+            bottom: 311px;
+            animation-delay: 1.5s;
+            -webkit-animation-delay: 1.5s;
+            -moz-animation-delay: 1.5s;
+        }
+        &:nth-child(5)  {
+            left: 435px;
+            bottom: 215px;
+            animation: light 2s linear infinite;
+            -webkit-animation: light 2s linear infinite;
+            -moz-animation: light 2s linear infinite;
+        }
+    }
+}
+@keyframes updown {
+    0% {
+        opacity: 1;
+        @include transform(translateY(0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateY(-20px));
+    }
+}
+@keyframes light {
+    0% {
+        opacity: .2;
+    }
+    50% {
+        opacity: .6;
+    }
+    100% {
+        opacity: .2;
+    }
+}

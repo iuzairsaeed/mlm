@@ -1,0 +1,355 @@
+%pr {
+    position: relative;
+}
+%pa {
+    position: absolute;
+    content : '';
+}
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+%center {
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50% , -50%));
+    position: absolute;
+    content: "";
+}
+%fluid {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+}
+.padding-top {
+    padding-top: 80px;
+}
+.padding-bottom {
+    padding-bottom: 80px;
+}
+.padding-top-half {
+    padding-top: 40px;
+}
+.padding-bottom-half {
+    padding-bottom: 40px;
+}
+.pt-80 {
+    padding-top: 80px;
+}
+.pb-80 {
+    padding-bottom: 80px;
+}
+.pt-60 {
+    padding-top: 60px;
+}
+.pb-60 {
+    padding-bottom: 60px;
+}
+.primary-bg {
+    background: $primary-bg;
+}
+.cl-white {
+    color: $white-color;
+}
+@include breakpoint(lg) {
+    .padding-top {
+        padding-top: 120px;
+    }
+    .padding-bottom {
+        padding-bottom: 120px;
+    }
+    .padding-top-half {
+        padding-top: 60px;
+    }
+    .padding-bottom-half {
+        padding-bottom: 60px;
+    }
+}
+/*Section Header*/
+.mb-30-none {
+    margin-bottom: -30px !important;
+}
+.mb-40-none {
+    margin-bottom: -40px !important;
+}
+.tab-item {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+.tab-menu {
+    li {
+        cursor: pointer;
+    }
+}
+body {
+    *::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+    }
+    *::-webkit-scrollbar {
+        width: 6px;
+        height: 4px;
+        background-color: #000;
+    }
+    *::-webkit-scrollbar-button {
+        background-color: #000;
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: #000000;
+    }
+}
+*::selection {
+    background-color: $theme-color;
+    color: $white-color;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mb--20 {
+    margin-bottom: -20px;
+}
+.mb-50 {
+    margin-bottom: 50px;
+}
+.pt-10 {
+    padding-top: 10px;
+}
+.pt-20 {
+    padding-top: 20px;
+}
+.pt-50 {
+    padding-top: 50px;
+}
+.pb-10 {
+    padding-bottom: 10px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pb-50 {
+    padding-bottom: 50px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.oh {
+    overflow: hidden;
+}
+.mw-lg-100 {
+    @include breakpoint(lg) {
+        max-width: 100%;
+    }
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0 ,0 ,0, .7);
+    z-index: 99;
+    display: none;
+    &.active {
+        display: block;
+        animation-name: fadeIn;
+        -webkit-animation-name: fadeIn;
+        -moz-animation-name: fadeIn;
+        animation-duration: .3s;
+        -webkit-animation-duration: .3s;
+        -moz-animation-duration: .3s;
+    }
+}
+.primary-overlay {
+    position: relative;
+    &::before {
+        @extend %fluid;
+        background: $primary-bg;
+        opacity: .8;
+    }
+    .container, .container-fluid {
+        position: relative;
+    }
+}
+.bg-theme-one {
+    background: $theme-one;
+}
+.section-bg {
+    background: $section-bg;
+}
+.body-bg {
+    background: $body-bg;
+}
+.bg-overlay, .deep-overlay {
+    position: relative;
+    * {
+        position: relative;
+        z-index: 1;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        // background: rgba($color:#000, $alpha:.8);
+        background: $theme-bg;
+        opacity: .8;
+    }
+}
+.mb--50 {
+    margin-bottom: -50px;
+}
+.deep-overlay {
+    &::before {
+        opacity: .93;
+    }
+}
+/*Section Header Starts Here*/
+.sticky {
+    position: sticky;
+    top: 120px;
+}
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    .cate {
+        color: $theme-color;
+        font-size: 30px;
+        line-height: 1;
+        margin-bottom: 15px;
+        display: block;
+    }
+    .title {
+        text-transform: capitalize;
+        margin-bottom: 25px;
+        span {
+            color: $theme-color;
+        }
+    }
+    p {
+        margin-bottom: 25px;
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+    &.margin-olpo {
+        margin-bottom: 30px;
+    }
+    @include breakpoint(sm) {
+        margin-bottom: 45px;
+        .cate {
+            margin-bottom: 20px;
+        }
+        &.margin-olpo {
+            margin-bottom: 35px;
+            .cate {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    @include breakpoint(md) {
+        margin-bottom: 55px;
+        .title {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        &.margin-olpo {
+            margin-bottom: 40px;
+        }
+    }
+    &.left-style {
+        margin-left: 0;
+        text-align: left;
+    }
+    &.cl-white {
+        .title,
+        .cate  {
+            color: $white-color;
+        }
+    }
+}
+
+.text-theme {
+    color: $theme-color !important;
+}
+.text-primary {
+    color: $primary-color !important;
+}
+.theme-bg {
+    background: $theme-bg;
+}
+.rtl {
+    direction: rtl;
+}
+.mb-40 {
+    margin-bottom: 40px;
+}
+.social-icons {
+    @extend %flex;
+    justify-content: center;
+    margin: -5px;
+    li {
+        padding: 5px;
+        a {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            @include border-radius(50%);
+            background: $theme-color;
+            color: $white-color;
+            &.facebook {
+                background: $facebook;
+            }
+            &.twitter {
+                background: $twitter;
+            }
+            &.instagram {
+                background: $instagram;
+            }
+            &.pinterest {
+                background: $pinterest;
+            }
+            &.vimeo {
+                background: $vimeo;
+            }
+            &.google {
+                background: $google;
+            }
+            &.youtube {
+                background: $youtube;
+            }
+            &.tumblr {
+                background: $tumblr;
+            }
+            &.linkedin {
+                background: $linkedin;
+            }
+        }
+    }
+}

@@ -1,0 +1,286 @@
+/*Sidebar CSS Starts Here*/
+.widget {
+    padding: 30px;
+    background: $section-bg;
+    margin-bottom: 30px;
+    @include border-radius(5px);
+
+    @include breakpoint(lg) {
+        margin-bottom: 60px;
+
+        .title {
+            margin-bottom: 4px;
+        }
+
+        @include breakpoint(xl) {
+            margin-left: 20px;
+        }
+    }
+
+    @media screen and (max-width:400px) {
+        padding: 30px 15px;
+    }
+
+    &.widget-search {
+        .search--form {
+            position: relative;
+
+            input {
+                @include border-radius(5px);
+                background: transparent;
+                height: 60px;
+                background: $white-color;
+                padding-left: 20px;
+                border: none;
+            }
+
+            button {
+                height: 60px;
+                width: 60px;
+                right: 0;
+                top: 0;
+                position: absolute;
+                border: none;
+                @include border-radius(5px);
+                border-left: none;
+                outline: none;
+            }
+        }
+    }
+
+    &.widget-archive,
+    &.widget-category {
+        ul {
+            margin-bottom: -28px;
+
+            li {
+                padding: 0;
+                border-bottom: 1px solid rgba($color:$title-color, $alpha:.1);
+
+                a {
+                    padding: 11px 0;
+                    display: flex;
+
+                    &::before {
+                        content: "\f105";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        margin-right: 5px;
+                        color: $theme-color;
+                    }
+
+                    color: $body-color;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        color: $theme-color;
+                        padding-left: 5px;
+                    }
+                }
+
+                &:last-child {
+                    border: none;
+                    margin-bottom: -18px;
+                }
+            }
+        }
+    }
+
+    &.widget-archive {
+        ul li a::before {
+            display: none;
+        }
+    }
+
+    &.widget-tags {
+        ul {
+            @extend %flex;
+            margin: -5px;
+            margin-top: 20px;
+
+            li {
+                padding: 5px;
+
+                a {
+                    padding: 8px 20px;
+                    @include border-radius(3px);
+                    border: 1px solid rgba($color:$body-color, $alpha:.3);
+                    color: $body-color;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        color: $white-color;
+                        border-color: $theme-color;
+                        background: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &.widget-banner {
+        padding: 65px 15px 60px;
+        text-align: center;
+
+        .sub-title {
+            text-transform: capitalize;
+
+            @include breakpoint(sm) {
+                font-size: 28px;
+                margin-bottom: 5px;
+            }
+        }
+
+        a {
+            font-size: 20px;
+            color: $body-color;
+            &:hover {
+                color :$theme-color;
+            }
+
+            @include breakpoint(sm) {
+                font-size: 30px;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    &.widget-post {
+        ul {
+            margin-top: 24px;
+
+            li {
+                @extend %flex;
+                justify-content: space-between;
+                padding: 0;
+                margin-bottom: 30px;
+
+                .c-thumb {
+                    width: 96px;
+                }
+
+                .content {
+                    width: calc(100% - 110px);
+
+                    .sub-title {
+                        margin-top: 0;
+                        font-size: 16px;
+                        margin-bottom: 4px;
+
+                        a {
+                            color: rgba($color:$title-color, $alpha:.9);
+                            &:hover {
+                                color: $theme-color;
+                            }
+                        }
+                    }
+
+                    .meta {
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        color: rgba($color:$title-color, $alpha:.8);
+
+                        a {
+                            color: $theme-color;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &.widget-personal-info {
+        ul {
+            li {
+                padding: 20px 0;
+                border-bottom: 1px solid $border-color;
+
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0;
+                }
+
+                h6 {
+                    font-weight: 600;
+                    font-size: 18px;
+                    text-transform: capitalize;
+                }
+
+                span {
+                    display: block;
+                    margin-bottom: -7px;
+                    font-size: 14px;
+                    color: #777777;
+                }
+            }
+        }
+    }
+
+    .title {
+        text-transform: capitalize;
+        &.two {
+            margin-bottom: 20px;
+            @include breakpoint(sm) {
+                font-size: 24px;
+            }
+        }
+    }
+}
+.hudai {
+    overflow: hidden;
+}
+.client-slider-rat {
+    margin: -15px;
+    margin-top: -5px;
+
+    .slide-item {
+        padding: 15px;
+    }
+
+    .c-thumb {
+        margin-bottom: 40px;
+    }
+
+    p {
+        margin-bottom: 22px;
+    }
+
+    @include breakpoint(max-sm) {
+        .c-thumb {
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+    }
+}
+.ratings {
+    margin-bottom: 10px;
+
+    a,
+    i {
+        color: #fdb02a;
+    }
+}
+.author-rat {
+    a {
+        font-size: 18px;
+    }
+
+    span {
+        display: block;
+    }
+}
+.b-sidebar {
+    position: sticky;
+    top: 120px;
+
+    @include breakpoint(max-lg) {
+        margin-top: 70px;
+    }
+}

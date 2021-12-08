@@ -1,0 +1,161 @@
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: $body-color;
+    line-height: $lh-p;
+    overflow-x: hidden;
+    font-family: $body;
+    background: $body-bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+    color: $title-color;
+    font-family: $heading;
+    a {
+        color: $title-color;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+h1 {
+    font-size: $fs-h1;
+}
+h2 {
+    font-size: $fs-h2;
+    margin-top: -7px;
+}
+h3 {
+    font-size: $fs-h3;
+    margin-top: -6px;
+}
+h4 {
+    font-size: $fs-h4;
+    margin-top: -5px;
+}
+h5 {
+    font-size: $fs-h5;
+    margin-top: -4px;
+}
+h6 {
+    font-size: $fs-h6;
+    margin-top: -3px;
+}
+p {
+    margin-top: -8px;
+    &:last-child {
+        margin-bottom: -7px !important;
+    }
+}
+@include breakpoint (md) {
+    h1 {
+        font-size: $fs-sm-h1;
+        margin-top: -16px;
+        line-height: 1.2;
+    }
+    h2 {
+        font-size: $fs-sm-h2;
+        margin-top: -7px;
+        line-height: 50px;
+    }
+    h3 {
+        font-size: $fs-sm-h3;
+        margin-top: -4px;
+    }
+    h4 {
+        font-size: $fs-sm-h4;
+        margin-top: -5px;
+    }
+    h5 {
+        font-size: $fs-sm-h5;
+        margin-top: -4px;
+    }
+    h6 {
+        font-size: $fs-sm-h6;
+        margin-top: -3px;
+    }
+}
+a {
+    display: inline-block;
+    @include transition($transition);
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+        padding: 5px 0;
+    }
+}
+
+select,
+input,
+textarea{
+    width: 100%;
+}
+select,
+input,
+textarea,
+button {
+    background-color: $white-color;
+    border: 1px solid $border-color;
+    outline: none;
+}
+textarea {
+    height: 200px;
+    resize: none;
+    padding: 10px;
+}
+input,
+button,
+select {
+    height: 50px;
+    color: $body-color;
+}
+label,
+button,
+select {
+    cursor: pointer;
+}
+input {
+    background: #f4f4f4;
+    border: 1px solid transparent;
+    @include border-radius(5px);
+    padding-left: 10px;
+    &:focus {
+        border: 1px solid $theme-one;
+    }
+    &[type="submit"] {
+        cursor: pointer;
+        background-color: $primary-color;
+        color: $white-color;
+        font-weight: 700;
+        padding: 0;
+    }
+}
+.bg_img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.bg_fixed {
+    background-attachment: fixed;
+}
